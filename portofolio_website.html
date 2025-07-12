@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio - Rifqi Ahmad Firdaus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --card-bg: #f0f0f0;
+      --accent: #000000;
+      --shadow-color: rgba(0, 0, 0, 0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --card-bg: #1e1e1e;
+        --accent: #ffffff;
+        --shadow-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+    header, section, footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+    header {
+      text-align: center;
+    }
+    header h1 {
+  font-size: 3rem;
+}
+    header p {
+  font-size: 1.1rem;
+  color: #888888;
+}
+    section {
+      margin-bottom: 20px;
+    }
+    h2 {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 8px var(--shadow-color);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .card p, li {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    /* Animasi zoom saat scroll */
+    .card {
+      transform: scale(0.97);
+      opacity: 0.8;
+    }
+    .card.visible {
+      transform: scale(1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rifqi Ahmad Firdaus</h1>
+    <p>Siswa SMKN 43 | Web Developer | Juara 2 LKS Jakarta Selatan</p>
+  </header>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <div class="card"> <p>Saya adalah siswa dari SMKN 43 yang memiliki semangat tinggi dalam pengembangan web. Dengan keahlian di HTML, CSS, JavaScript, dan Laravel, saya telah menyelesaikan berbagai proyek. Saya juga merupakan <strong>juara 2 Lomba Kompetensi Siswa (LKS) se-Jakarta Selatan</strong>, dan aktif mengikuti pelatihan teknologi untuk terus mengembangkan kemampuan saya.</p> </div>
+  </section>
+
+  <section id="proyek">
+    <h2>Proyek Unggulan</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Game RPG</strong> – Proyek permainan berbasis web dengan mekanisme turn-based sederhana.</li>
+        <li><strong>Website Laravel</strong> – Situs yang dibangun menggunakan Laravel untuk pengelolaan data secara dinamis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="keterampilan">
+    <h2>Keterampilan</h2>
+    <div class="card">
+      <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Laravel</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pengalaman">
+    <h2>Prestasi & Pengalaman</h2>
+    <div class="card">
+      <ul>
+        <li>Juara 2 LKS Web Development Jakarta Selatan</li>
+        <li>Finalis Lomba Web Development tingkat provinsi</li>
+        <li>Peserta pelatihan aplikasi Laravel & UI/UX</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:yp14yj@gmail.com">yp14yj@gmail.com</a><br>
+         GitHub: <a href="https://github.com/GroX0D" target="_blank">GroX0D</a><br>
+         LinkedIn: belum tersedia</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Rifqi Ahmad Firdaus. Portofolio ini dibuat sebagai tugas sekolah dan cerminan kemampuan pribadi.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
